@@ -49,8 +49,14 @@ function love.load()
     require('controls')
 
     -- Cards
-    require('cards')
-    print(cards[1].question)
+    require('ccse_cards')
+
+    -- Shuffle the cards
+    shuffled_cards = {}
+    for i, v in ipairs(cards) do
+        local pos = math.random(1, #shuffled_cards+1)
+        table.insert(shuffled_cards, pos, v)
+    end
     
     -- Initial variables
     gameState = TITLE
@@ -73,9 +79,11 @@ function love.draw()
     if gameState == TITLE then
         love.graphics.printf("Click Anywhere to Begin!", 0, 100, gameWidth, "center")
     elseif gameState == FRONT then
-        love.graphics.printf(cards[cardnum].question, 0, 100, gameWidth, "center")
+        love.graphics.printf("Card number " .. cardnum .. " front:", 0, 50, gameWidth, "center")
+        love.graphics.printf(shuffled_cards[cardnum].question, 0, 100, gameWidth, "center")
     elseif gameState == BACK then 
-        love.graphics.printf(cards[cardnum].answer, 0, 100, gameWidth, "center")
+        love.graphics.printf("Card number " .. cardnum .. " back:", 0, 50, gameWidth, "center")
+        love.graphics.printf(shuffled_cards[cardnum].answer, 0, 100, gameWidth, "center")
     end
 
     push:apply("end")
