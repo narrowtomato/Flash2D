@@ -79,10 +79,10 @@ function love.draw()
     if gameState == TITLE then
         love.graphics.printf("Click Anywhere to Begin!", 0, 100, gameWidth, "center")
     elseif gameState == FRONT then
-        love.graphics.printf("Card number " .. cardnum .. " front:", 0, 50, gameWidth, "center")
+        love.graphics.printf("Card number " .. cardnum .. "/" .. #cards .. " front:", 0, 50, gameWidth, "center")
         love.graphics.printf(shuffled_cards[cardnum].question, 0, 100, gameWidth, "center")
     elseif gameState == BACK then 
-        love.graphics.printf("Card number " .. cardnum .. " back:", 0, 50, gameWidth, "center")
+        love.graphics.printf("Card number " .. cardnum .. "/" .. #cards .. " back:", 0, 50, gameWidth, "center")
         love.graphics.printf(shuffled_cards[cardnum].answer, 0, 100, gameWidth, "center")
     end
 
