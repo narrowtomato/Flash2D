@@ -126,7 +126,7 @@ cards = {
     {question="Which feature enabled the CoreXL connections to be dynamically assigned and reassigned as needed?", answer="Dynamic Dispatcher"},
     {question="Which feature, disabled by default, allows Gas to change the number of Kernel and SND cores without rebooting, based on the CPU utilization of the kernel?", answer="Dynamic Split/Balancing"},
     {question="How does the dsd (Dynamic Split Daemon) process, in three stages, manage Dynamic Split/Balancing?", answer="Examines current CPU utilization, Decides what changes to make, Add/removes CoreXL instances to SND or Kernel"},
-    {question="When implementing SNDs, how many cores does each system need to have?", answer="Doesn’t matter as long as they have the same number (and that number is 4 or greater)"},
+    {question="When implementing SNDs, how many cores does each system need to have?", answer="Doesn't matter as long as they have the same number (and that number is 4 or greater)"},
     {question="What feature, enabled by default in R80.40/81.10) allows the FW to prioritize traffic based on packet type once it has reached full (100%) load?", answer="Firewall Priority Queues"},
     {question="What are the default 8 priority queues, from 0-7 (0 is highest priority), of the Firewall Priority Queues?", answer="Routing, Control, Cluster Sync, High Priority, Light Data Queue, Default Data Queue, Log Notification, Heavy Data Queue"},
     {question="In which of the 8 priority queues of the Firewall Priority Queues can connections NOT migrate to a different priority?", answer="Routing, Cluster Sync, Log Notifications"},
