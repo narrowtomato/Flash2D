@@ -32,9 +32,10 @@ function love.load()
     FRONT = 2
     BACK = 3
 
-    -- Font
-    font = love.graphics.newFont("fonts/VCR_OSD_MONO.ttf", 20)
-    love.graphics.setFont(font)
+    -- Fonts
+    vcr_font = love.graphics.newFont("fonts/VCR_OSD_MONO.ttf", 20)
+    small_vcr_font = love.graphics.newFont("fonts/VCR_OSD_MONO.ttf", 10)
+    love.graphics.setFont(vcr_font)
 
     -- Make sure numbers are truly random
     math.randomseed(os.time())
@@ -85,6 +86,10 @@ function love.draw()
         love.graphics.printf("Card number " .. cardnum .. "/" .. #cards .. " back:", 0, 50, gameWidth, "center")
         love.graphics.printf(shuffled_cards[cardnum].answer, 0, 100, gameWidth, "center")
     end
+
+    -- Get Mouse Coordinates based on Push screen
+    mouseX, mouseY = love.mouse.getPosition()
+    mouseX, mouseY = push:toGame(mouseX, mouseY)
 
     push:apply("end")
 end
